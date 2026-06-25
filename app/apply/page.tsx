@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import ApplicationForm from "@/components/ApplicationForm";
-import { property, criteria, money, fullAddress } from "@/data/property";
+import AddressLink from "@/components/AddressLink";
+import { property, criteria, money } from "@/data/property";
 
 export const metadata: Metadata = {
   title: `Apply — ${property.addressLine}`,
@@ -17,7 +18,7 @@ export default function ApplyPage() {
             <Link className="btn secondary" href="/">← Back to listing</Link>
           </div>
           <p className="eyebrow">Rental application</p>
-          <h1 style={{ fontSize: 30 }}>Apply for {fullAddress()}</h1>
+          <h1 style={{ fontSize: 30 }}>Apply for <AddressLink /></h1>
           <p className="addr">
             {money(property.rent)}/month · {property.beds} bd / {property.baths} ba · {property.leaseTermMonths}-month lease
           </p>

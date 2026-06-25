@@ -2,6 +2,7 @@ import Link from "next/link";
 import Carousel from "@/components/Carousel";
 import ContactForm from "@/components/ContactForm";
 import PhoneReveal from "@/components/PhoneReveal";
+import AddressLink from "@/components/AddressLink";
 import { listPropertyPhotos } from "@/lib/supabase";
 import { sortForDisplay, pickFeatured, findMap, excludeMap } from "@/lib/photos";
 import {
@@ -58,7 +59,7 @@ export default async function Home() {
           </div>
           <p className="eyebrow">For Rent · {property.type}</p>
           <h1>{property.name} — {property.city}, {property.state}</h1>
-          <p className="addr">{fullAddress()}</p>
+          <p className="addr"><AddressLink /></p>
           <div className="price-row">
             <span className="price">{money(property.rent)}<small> / month</small></span>
             <span className="avail">{property.availability}</span>
@@ -275,7 +276,7 @@ export default async function Home() {
           </div>
           <p className="small">{fairHousing.long}</p>
           <p className="small muted" style={{ marginTop: 18 }}>
-            {fullAddress()} · This listing is provided by the property owner. Information believed
+            <AddressLink /> · This listing is provided by the property owner. Information believed
             accurate but not guaranteed; terms subject to a signed lease.
           </p>
           <p className="small" style={{ marginTop: 14 }}>

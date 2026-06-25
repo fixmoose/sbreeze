@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import PhotoGrid from "@/components/PhotoGrid";
 import { listPropertyPhotos } from "@/lib/supabase";
 import { sortForDisplay, excludeMap } from "@/lib/photos";
-import { property, fullAddress } from "@/data/property";
+import AddressLink from "@/components/AddressLink";
+import { property } from "@/data/property";
 
 export const revalidate = 60;
 export const metadata: Metadata = { title: `Photos — ${property.addressLine}` };
@@ -23,7 +24,7 @@ export default async function PhotosPage() {
             </span>
           </div>
           <h1 style={{ fontSize: 28, marginTop: 8 }}>All photos</h1>
-          <p className="addr">{fullAddress()} · {photos.length} photos</p>
+          <p className="addr"><AddressLink /> · {photos.length} photos</p>
         </div>
       </header>
 

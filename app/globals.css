@@ -37,6 +37,10 @@ h1, h2, h3 { letter-spacing: -0.022em; line-height: 1.12; font-weight: 800; }
 .small { font-size: 14px; }
 .center { text-align: center; }
 
+/* Address → Google Maps link (inherits surrounding text color) */
+.addr-link { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.addr-link:hover { opacity: 0.82; }
+
 /* ── Nav ──────────────────────────────────────────────────────────── */
 .nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 0; }
 .nav .brand { font-weight: 800; font-size: 19px; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
