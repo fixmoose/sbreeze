@@ -12,7 +12,7 @@ export type Profile = {
 
 /** Emails that should be treated as the landlord/admin. Comma-separated env. */
 export function adminEmails(): string[] {
-  return (process.env.ADMIN_EMAILS || "adriaticbuilders@gmail.com")
+  return (process.env.ADMIN_EMAILS || "dejan@haywilson.com")
     .split(",")
     .map((e) => e.trim().toLowerCase())
     .filter(Boolean);
