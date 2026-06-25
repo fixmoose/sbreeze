@@ -14,8 +14,8 @@ import { join, extname, basename } from "node:path";
 
 const BUCKET = "SB_property_photos";
 const PHOTOS_DIR = "photos";
-const MAX_DIM = 1600; // longest edge, px
-const QUALITY = 78; // JPEG quality
+const MAX_DIM = 2048; // longest edge, px
+const QUALITY = 90; // JPEG quality
 
 function loadEnv() {
   if (!existsSync(".env.local")) return;
@@ -76,7 +76,7 @@ async function main() {
     const out = await sharp(input)
       .rotate() // honor EXIF orientation (phone photos)
       .resize({ width: MAX_DIM, height: MAX_DIM, fit: "inside", withoutEnlargement: true })
-      .jpeg({ quality: QUALITY, mozjpeg: true })
+      .jpeg({ quality: QUALITY, mozjpeg: true, chromaSubsampling: "4:4:4" })
       .toBuffer();
     origTotal += input.length;
     newTotal += out.length;

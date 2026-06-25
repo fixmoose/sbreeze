@@ -3,9 +3,9 @@ import { PhotoItem } from "@/lib/supabase";
 // Logical display order (exterior / curb-appeal first), derived from filenames
 // so we don't have to re-upload to reorder. First keyword match wins.
 const DISPLAY_ORDER = [
-  "exterior", "duplex", "front-door", "driveway", "ev-charger",
-  "backyard", "living-room", "kitchen", "pantry", "hood",
-  "half-bath", "stairs", "uphall", "upstairs",
+  "kitchen", "living-room", "pantry", "hood", "half-bath",
+  "exterior", "duplex", "front-door", "driveway", "ev-charger", "backyard",
+  "stairs", "uphall", "upstairs",
   "masterbdr", "masterbath", "bdr-north", "bdr-south", "upbath",
   "laundry", "garage", "solar", "inv-with-batteries", "furnace",
   "thermostat", "undersink",
@@ -22,10 +22,10 @@ export function sortForDisplay(photos: PhotoItem[]): PhotoItem[] {
   return [...photos].sort((a, b) => rankOf(a.name) - rankOf(b.name) || a.name.localeCompare(b.name));
 }
 
-// A curated, varied set for the home-page carousel — outside shot first.
+// A curated, varied set for the home-page carousel — kitchen first.
 const FEATURED = [
-  "exterior-east", "duplex-view", "living-room", "kitchen",
-  "masterbdr", "masterbath-tub", "backyard", "ev-charger",
+  "kitchen", "living-room", "exterior-east", "masterbdr",
+  "masterbath-tub", "backyard", "duplex-view", "ev-charger",
 ];
 
 /** A handful of representative photos for the carousel (outside first). */

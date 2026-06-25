@@ -196,7 +196,7 @@ export const contact = {
     "The home has a lockbox for scheduled self-showings. Use the form below to arrange a viewing time and receive the code.",
 };
 
-export const siteUrl = "https://sunsetbreeze.vercel.app";
+export const siteUrl = "https://sunsetbreeze-phi.vercel.app";
 
 export function fullAddress() {
   return `${property.addressLine}, ${property.city}, ${property.state} ${property.zip}`;
