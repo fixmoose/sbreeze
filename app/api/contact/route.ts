@@ -21,7 +21,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Please provide your name, a valid email, and a message." }, { status: 400 });
   }
 
-  const to = process.env.APPLICATION_NOTIFY_EMAIL || "adriaticbuilders@gmail.com";
+  const to = process.env.APPLICATION_NOTIFY_EMAIL || "dejan@haywilson.com";
   try {
     await sendEmail({
       to,

@@ -51,7 +51,7 @@ Open http://localhost:3000. The site renders even before Supabase/UniOne are con
 1. Verify a sender domain/address in the UniOne dashboard.
 2. In `.env.local` set `UNIONE_API_KEY`, `UNIONE_FROM_EMAIL` (the verified sender),
    and `UNIONE_API_URL` for your region (`eu1` or `us1`).
-3. `APPLICATION_NOTIFY_EMAIL` is where new-application alerts go (default `adriaticbuilders@gmail.com`).
+3. `APPLICATION_NOTIFY_EMAIL` is where new-application alerts go (default `dejan@haywilson.com`).
 
 ## 4. Push to GitHub
 

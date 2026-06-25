@@ -59,7 +59,7 @@ export async function POST(req: NextRequest) {
   }
 
   // 2) Email notifications (best-effort — never fail the request if email is down).
-  const notifyTo = process.env.APPLICATION_NOTIFY_EMAIL || "adriaticbuilders@gmail.com";
+  const notifyTo = process.env.APPLICATION_NOTIFY_EMAIL || "dejan@haywilson.com";
   const rows = Object.entries(record)
     .filter(([k]) => !["consent_screening", "certify_true"].includes(k))
     .map(([k, v]) => `<tr><td style="padding:4px 10px;font-weight:600">${k}</td><td style="padding:4px 10px">${escapeHtml(v) || "—"}</td></tr>`)
