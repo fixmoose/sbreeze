@@ -199,3 +199,21 @@ footer .muted { color: #9a9088; }
 
 /* table polish (dashboards) */
 table { font-variant-numeric: tabular-nums; }
+
+/* ── Applications list (admin) ────────────────────────────────────── */
+.app-item { border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 12px; background: #fff; box-shadow: var(--shadow-sm); overflow: hidden; }
+.app-head { display: flex; gap: 12px; align-items: center; justify-content: space-between; padding: 14px 18px; cursor: pointer; }
+.app-head:hover { background: var(--bg-soft); }
+.app-title { font-weight: 800; }
+.app-meta { color: var(--muted); font-size: 13px; }
+.app-chev { color: var(--muted); font-size: 11px; }
+.app-badge { font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.03em; }
+.st-new { background: #eef3ff; color: #2a4fb3; }
+.st-screening { background: #fff4e5; color: #b3681e; }
+.st-approved { background: #e8f6ee; color: #1f7a52; }
+.st-declined { background: #fdecec; color: #b3261e; }
+.app-body { padding: 16px 18px; border-top: 1px solid var(--line); }
+.app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; margin: 0 0 16px; }
+@media (max-width: 600px) { .app-grid { grid-template-columns: 1fr; } }
+.app-grid dt { font-weight: 700; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.03em; margin: 0; }
+.app-grid dd { margin: 2px 0 0; }

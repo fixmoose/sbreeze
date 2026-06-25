@@ -19,6 +19,7 @@ import RecordPaymentForm from "@/components/admin/RecordPaymentForm";
 import AddExpenseForm from "@/components/admin/AddExpenseForm";
 import AddUtilityBillForm from "@/components/admin/AddUtilityBillForm";
 import UtilityBillToggle from "@/components/admin/UtilityBillRow";
+import ApplicationsList from "@/components/admin/ApplicationsList";
 
 export const dynamic = "force-dynamic";
 
@@ -32,7 +33,7 @@ export default async function AdminDashboard({ searchParams }: { searchParams: {
 
   // Pull everything in parallel.
   const [appsRes, leasesRes, paymentsRes, expensesRes, profilesRes, utilitiesRes] = await Promise.all([
-    svc.from(SB_APPLICATIONS_TABLE).select("*").order("created_at", { ascending: false }).limit(25),
+    svc.from(SB_APPLICATIONS_TABLE).select("*").order("created_at", { ascending: false }).limit(500),
     svc.from(SB_LEASES_TABLE).select("*").order("created_at", { ascending: false }),
     svc.from(SB_PAYMENTS_TABLE).select("*").order("created_at", { ascending: false }).limit(50),
     svc.from(SB_EXPENSES_TABLE).select("*").gte("expense_date", `${year}-01-01`).lte("expense_date", `${year}-12-31`).order("expense_date", { ascending: false }),
@@ -103,29 +104,7 @@ export default async function AdminDashboard({ searchParams }: { searchParams: {
         <section>
           <div className="container">
             <h2>Applications</h2>
-            {applications.length === 0 ? <p className="muted">No applications yet.</p> : (
-              <div style={{ overflowX: "auto" }}>
-                <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14 }}>
-                  <thead><tr>
-                    <th style={th}>Received</th><th style={th}>Name</th><th style={th}>Contact</th>
-                    <th style={th}>Income/mo</th><th style={th}>Occupants</th><th style={th}>Pets</th><th style={th}>Move-in</th>
-                  </tr></thead>
-                  <tbody>
-                    {applications.map((a) => (
-                      <tr key={a.id}>
-                        <td style={td}>{new Date(a.created_at).toLocaleDateString()}</td>
-                        <td style={td}>{a.full_name}</td>
-                        <td style={td}>{a.email}<br />{a.phone}</td>
-                        <td style={td}>{a.monthly_income ? money(Number(a.monthly_income)) : "—"}</td>
-                        <td style={td}>{a.total_occupants || "—"}</td>
-                        <td style={td}>{a.pets || "—"}</td>
-                        <td style={td}>{a.desired_move_in || "—"}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
+            <ApplicationsList applications={applications} />
           </div>
         </section>
 

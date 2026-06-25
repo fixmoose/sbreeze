@@ -45,10 +45,16 @@ create table if not exists public."SB_applications" (
 
   -- consent flags
   consent_screening  text,
-  certify_true       text
+  certify_true       text,
+
+  -- landlord's private review notes
+  admin_notes        text
 );
 
 create index if not exists sb_applications_created_idx on public."SB_applications" (created_at desc);
+
+-- If your table was created before admin_notes existed, this adds it safely:
+alter table public."SB_applications" add column if not exists admin_notes text;
 
 -- Row Level Security: lock the table down. The website writes using the
 -- service_role key (which bypasses RLS), so we do NOT add any public policies.
