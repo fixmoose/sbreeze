@@ -12,7 +12,7 @@ export const property = {
   zip: "89506",
   beds: 3,
   baths: 2.5,
-  sqft: 1440,
+  sqft: 1350,
   type: "Townhouse (one shared wall, no HOA)",
   availability: "Available now — move-in ready, professionally cleaned",
 
