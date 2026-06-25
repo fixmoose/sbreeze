@@ -33,7 +33,6 @@ export const property = {
 export const utilities = {
   includedInRent: [
     "Solar + battery system — included (no extra charge)",
-    "Property taxes",
     "Garbage / trash service",
     "Sewer",
   ],
@@ -47,12 +46,14 @@ export const utilities = {
 
 // ── Property highlights for the marketing section ──────────────────────────
 export const features = [
+  { icon: "⛳", title: "Golf course view", desc: "Backs directly onto the golf course — no rear neighbor behind you." },
   { icon: "☀️", title: "Solar + battery backup", desc: "Lower power bills and resilience during outages — included in the rent." },
   { icon: "🔌", title: "2× EV chargers", desc: "Charge two electric vehicles at home." },
   { icon: "🍳", title: "Newer kitchen + fridge", desc: "Updated kitchen with a newer refrigerator included." },
   { icon: "🪵", title: "New flooring upstairs", desc: "Brand-new flooring throughout the upper level — no carpet." },
-  { icon: "🛁", title: "3 bed / 2.5 bath", desc: "~1,440 sq ft of comfortable, move-in-ready space." },
-  { icon: "🏡", title: "Townhouse, no HOA", desc: "One shared wall with a neighbor; no HOA dues or rules." },
+  { icon: "🛁", title: "3 bed / 2.5 bath", desc: "~1,350 sq ft of comfortable, move-in-ready space." },
+  { icon: "🏡", title: "Townhouse, no HOA", desc: "Only one shared (side) wall; no HOA dues or rules." },
+  { icon: "🤝", title: "Rent direct from the owner", desc: "Apply on this site and rent directly from the owner — no third-party rental or management agency, and no agency fees." },
 ];
 
 // ── Rental criteria (applied equally to EVERY applicant) ────────────────────
@@ -128,7 +129,7 @@ export const requirements = [
   {
     title: "Shared wall",
     body:
-      "This townhouse shares one wall with the neighboring unit. Quiet hours and considerate-neighbor conduct apply.",
+      "This townhouse shares one (side) wall with the neighboring unit. There is no rear neighbor — the back faces the golf course. Quiet hours and considerate-neighbor conduct apply.",
   },
 ];
 

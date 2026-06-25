@@ -67,6 +67,7 @@ export default async function Home() {
             <span>{property.beds} Bedrooms</span>
             <span>{property.baths} Baths</span>
             <span>~{property.sqft.toLocaleString()} sq ft</span>
+            <span>⛳ Golf course view</span>
             <span>Solar + EV</span>
           </div>
           <Link className="btn big" href="/apply">Start your application →</Link>
@@ -143,7 +144,7 @@ export default async function Home() {
             <p className="lead">Clear, up-front, and applied to every applicant the same way.</p>
             <dl className="kv">
               <dt>Rent</dt>
-              <dd>{money(property.rent)}/month (includes the solar + battery system, property tax, garbage, and sewer).</dd>
+              <dd>{money(property.rent)}/month (includes the solar + battery system, garbage, and sewer).</dd>
               <dt>Lease term</dt>
               <dd>{property.leaseTermMonths}-month lease.</dd>
               <dt>Security deposit</dt>
