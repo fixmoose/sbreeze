@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import Gallery from "@/components/Gallery";
+import PhotoGrid from "@/components/PhotoGrid";
 import { listPropertyPhotos } from "@/lib/supabase";
 import { sortForDisplay, excludeMap } from "@/lib/photos";
 import { property, fullAddress } from "@/data/property";
@@ -30,7 +30,7 @@ export default async function PhotosPage() {
       <main>
         <section style={{ borderBottom: "none" }}>
           <div className="container">
-            <Gallery photos={photos} />
+            <PhotoGrid photos={photos} />
           </div>
         </section>
       </main>
